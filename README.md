@@ -28,7 +28,7 @@ What’s left to do is to define a threshold t above which this cosine similarit
 
 If cos(E\_text, V) > t then the text is considered “close enough” to the topic. Otherwise the text doesn’t fit the topic.
 
-![Image](Aspose.Words.88ad23da-b2a6-4d11-b15e-e1f4a6e03cd7.001.png)
+![Image](https://github.com/rammalahmad/Gram-Schmidt-Model/blob/main/Graphics/Aspose.Words.88ad23da-b2a6-4d11-b15e-e1f4a6e03cd7.001.png)
 
 `          `*Fig. 1: Overview on the Mean Model* 
 
@@ -50,7 +50,7 @@ In order to represent a topic by a vector we start by finding keywords that are 
 
 Once we have the dictionary we generate the embeddings of that dictionary, then we calculate the average of those embeddings. The outcome will be V the vector representing the topic
 
-`        `![Image](Aspose.Words.88ad23da-b2a6-4d11-b15e-e1f4a6e03cd7.002.png)
+`        `![Image](https://github.com/rammalahmad/Gram-Schmidt-Model/blob/main/Graphics/Aspose.Words.88ad23da-b2a6-4d11-b15e-e1f4a6e03cd7.002.png)
 
 *Fig. 2: Finding the topic’s vector representation*
 
@@ -58,7 +58,7 @@ Once we have the dictionary we generate the embeddings of that dictionary, then 
 
 As for the threshold, we simply test our model on a training set (a sample of labeled data) using different thresholds ranging from 0 to 1. We save the threshold that provides us with the best accuracy.
 
-![Image](Aspose.Words.88ad23da-b2a6-4d11-b15e-e1f4a6e03cd7.003.png)
+![Image](https://github.com/rammalahmad/Gram-Schmidt-Model/blob/main/Graphics/Aspose.Words.88ad23da-b2a6-4d11-b15e-e1f4a6e03cd7.003.png)
 
 *Fig. 3: Finding Mean model’s threshold*
 
@@ -74,13 +74,13 @@ Now for a certain text, just like before we start by finding the text’s vector
 
 Since we have a vector space representing the topic now instead of a simple vector, in order to evaluate how close E\_text is to that plane we start by finding the orthonormal projection p of E\_text on our vector space. Then we calculate the cosine between E\_text and p. This value would tell us how close is E\_text is to the topic’s vector space, thus in a way we find out how semantically close is the text to the topic.
 
-![Image](Aspose.Words.88ad23da-b2a6-4d11-b15e-e1f4a6e03cd7.004.png)
+![Image](https://github.com/rammalahmad/Gram-Schmidt-Model/blob/main/Graphics/Aspose.Words.88ad23da-b2a6-4d11-b15e-e1f4a6e03cd7.004.png)
 
 *Fig. 4: The orthogonal projection of E\_text on the Plane representation of the topic*
 
 Finally, just like the previous model we’ll need a threshold t above which this cosine similarity implicates that the text fits the topic or not. 
 
-![Image](Aspose.Words.88ad23da-b2a6-4d11-b15e-e1f4a6e03cd7.005.png)
+![Image](https://github.com/rammalahmad/Gram-Schmidt-Model/blob/main/Graphics/Aspose.Words.88ad23da-b2a6-4d11-b15e-e1f4a6e03cd7.005.png)
 
 `          `*Fig. 5: Overview on the Gram-Schmidt Model* 
 
@@ -99,7 +99,7 @@ Therefore the vector space representation of our topic is nothing other than the
 
 We need however an orthonormal basis of our vector space in order to calculate the orthonormal projection later on… That’s why we use the Gram-Schmidt process in order to create an orthonormal basis from the regular one we found earlier. The outcome is indeed what we were looking for: a set of vectors that form an orthonormal basis for a vector space representation of the topic.
 
-`                     `**![Image](Aspose.Words.88ad23da-b2a6-4d11-b15e-e1f4a6e03cd7.006.png)**
+`                     `**![Image](https://github.com/rammalahmad/Gram-Schmidt-Model/blob/main/Graphics/Aspose.Words.88ad23da-b2a6-4d11-b15e-e1f4a6e03cd7.006.png)**
 
 *Fig. 6: Finding an orthonormal base for the plane representation of the topic*
 
@@ -107,7 +107,7 @@ We need however an orthonormal basis of our vector space in order to calculate t
 
 Exactly like the previous model, we test our model on a training set using different thresholds ranging from 0 to 1. We save the threshold that provides us with the best accuracy.
 
-![Image](Aspose.Words.88ad23da-b2a6-4d11-b15e-e1f4a6e03cd7.007.png)
+![Image](https://github.com/rammalahmad/Gram-Schmidt-Model/blob/main/Graphics/Aspose.Words.88ad23da-b2a6-4d11-b15e-e1f4a6e03cd7.007.png)
 
 *Fig. 7: Finding Gram-Schmidt model’s threshold*
 
